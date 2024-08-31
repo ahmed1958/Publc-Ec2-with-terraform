@@ -47,3 +47,6 @@ resource "aws_route_table_association" "terraform-associate" {
   subnet_id      = aws_subnet.my-subnet[each.key].id
   route_table_id = aws_route_table.my_routes[each.value[0]].id
 }
+
+
+

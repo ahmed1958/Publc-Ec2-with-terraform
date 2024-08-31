@@ -22,3 +22,11 @@ variable "terraform-associate-data" {
   description = "assosiate subnet with route table" 
   type = map(list(string))
 }
+variable "my-sec-data" {
+  description = "security groups" 
+  type = map(list(string))
+}
+variable "my-ec2-data" {
+  description = "ec2 data" 
+  type = map(list(string))
+}
