@@ -1,0 +1,24 @@
+pipeline {
+    agent {
+  label: "slave1"
+}
+    stages {
+        stage('clone_repo') {
+            steps {
+                sh """
+                rm -rf Publc-Ec2-with-terraform
+                git clone https://github.com/ahmed1958/Publc-Ec2-with-terraform
+                """
+            }
+        }
+        stage('terraform init') {
+            steps {
+                sh """
+                terraform init
+                terraform apply
+                """ 
+            }
+        }
+        
+    }
+}
