@@ -1,7 +1,7 @@
 pipeline {
-    agent {
-  label: "slave1"
-}
+    agent { 
+        label "slave1" 
+    }
     stages {
         stage('clone_repo') {
             steps {
@@ -14,11 +14,11 @@ pipeline {
         stage('terraform init') {
             steps {
                 sh """
+                cd Publc-Ec2-with-terraform
                 terraform init
-                terraform apply
+                terraform plan
                 """ 
             }
         }
-        
     }
 }
